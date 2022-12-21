@@ -1,0 +1,133 @@
+<div class="container grid">
+<div class="row" id="selector" style="display:block">
+<div class="form-group bg-light p-3">
+<h4>Select Your Name</h4>
+<select data-role="select" id="serverNames">
+<option class="inner" selected></option>
+</select><br>
+<button id="selectName" class="button success">Get Call List</button><br></div>
+</div>
+<div class="row bg.black" id="callList" style="display:none"><!--  calls 1 and 2 -->
+<div class="row">
+<div id="call1" class="cell-6">
+<div id="call1s" class="bg-light m-3 p-3">
+<h4 id="attendeeName1">Call 1 -</h4>
+<br>
+<span id="attendeeId1" style="display:none"></span> <strong>Call Status:</strong> <span id="status1"></span><br>
+<strong>Attendee Phone Number:</strong> <span id="attendeePhone1"></span><br>
+<strong>Location:</strong> <span id="attendeeLoc1"></span><br>
+<strong>Attended Before:</strong> <span id="attendeeFirstTime1"></span><br>
+<strong>Post Location:</strong> <span id="attendeePost1"></span><br>
+<strong>Invited By:</strong> <span id="attendeeInvited1"></span><br>
+<br>
+<strong>Contact 1:</strong> <span id="attendee1Contact1"></span><br>
+<strong>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee1ContactPhone1"></span><br>
+<br>
+<strong>Contact 2:</strong> <span id="attendee2Contact1"></span><br>
+<strong>   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee2ContactPhone1"></span><br>
+<br>
+<button type="button" id="completeBtn1" class="button success">Call Completed</button> <button type="button" id="attemptBtn1" class="button success">Call Attempted</button> <button type="button" id="commentBtn1" class="button yellow">Add Comment</button><br>
+<br>
+<button id="failBtn1" class="button warning" onclick="failCheck('1')" style="display:none">Could Not Complete</button><br>
+<div id="comments1" style="display:none"><br>
+<div class="form-group">
+<textarea data-role="textarea" data-prepend="Comments" class="form-control" id="comment1"></textarea></div>
+<br>
+<button type="button" id="saveComment1" class="button success">Save/Update Comment</button> <button type="button" id="hideComment1" class="button primary">Hide Comment</button></div>
+</div>
+</div>
+<div id="call2" class="cell-6">
+<div id="call2s" class="bg-light m-3 p-3">
+<h4 id="attendeeName2">Call 2 -</h4>
+<br>
+<span id="attendeeId2" style="display:none"></span> <strong>Call Status:</strong> <span id="status2"></span><br>
+<strong>Attendee Phone Number:</strong> <span id="attendeePhone2"></span><br>
+<strong>Location:</strong> <span id="attendeeLoc2"></span><br>
+<strong>Attended Before:</strong> <span id="attendeeFirstTime2"></span><br>
+<strong>Post Location:</strong> <span id="attendeePost2"></span><br>
+<strong>Invited By:</strong> <span id="attendeeInvited2"></span><br>
+<br>
+<strong>Contact 1:</strong> <span id="attendee1Contact2"></span><br>
+<strong>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee1ContactPhone2"></span><br>
+<br>
+<strong>Contact 2:</strong> <span id="attendee2Contact2"></span><br>
+<strong>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee2ContactPhone2"></span><br>
+<br>
+<button type="button" id="completeBtn2" class="button success">Call Completed</button> <button type="button" id="attemptBtn2" class="button success">Call Attempted</button> <button type="button" id="commentBtn2" class="button yellow">Add Comment</button><br>
+<br>
+<button id="failBtn2" class="button warning" onclick="failCheck('2')" style="display:none">Could Not Complete</button><br>
+<div id="comments2" style="display:none"><br>
+<div class="form-group">
+<textarea data-role="textarea" data-prepend="Comments" id="comment2"></textarea></div>
+<br>
+<button type="button" id="saveComment2" class="button success">Save/Update Comment</button> <button type="button" id="hideComment2" class="button primary">Hide Comment</button></div>
+</div>
+</div>
+</div>
+<!--  calls 3 and 4 -->
+<div class="row">
+<div id="call3" class="cell-6">
+<div id="call3s" class="bg-light m-3 p-3">
+<h4 id="attendeeName3">Call 3 -</h4>
+<br>
+<span id="attendeeId3" style="display:none"></span> <strong>Call Status:</strong> <span id="status3"></span><br>
+<strong>Attendee Phone Number:</strong> <span id="attendeePhone3"></span><br>
+<strong>Location:</strong> <span id="attendeeLoc3"></span><br>
+<strong>Attended Before:</strong> <span id="attendeeFirstTime3"></span><br>
+<strong>Post Location:</strong> <span id="attendeePost3"></span><br>
+<strong>Invited By:</strong> <span id="attendeeInvited3"></span><br>
+<br>
+<strong>Contact 1:</strong> <span id="attendee1Contact3"></span><br>
+<strong>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee1ContactPhone3"></span><br>
+<br>
+<strong>Contact 2:</strong> <span id="attendee2Contact3"></span><br>
+<strong>   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee2ContactPhone3"></span><br>
+<br>
+<button type="button" id="completeBtn3" class="button success">Call Completed</button> <button type="button" id="attemptBtn3" class="button success">Call Attempted</button> <button type="button" id="commentBtn3" class="button yellow">Add Comment</button><br>
+<br>
+<button id="failBtn3" class="button warning" onclick="failCheck('3')" style="display:none">Could Not Complete</button><br>
+<div id="comments3" style="display:none"><br>
+<div class="form-group">
+<textarea data-role="textarea" data-prepend="Comments" class="form-control" id="comment3"></textarea></div>
+<br>
+<button type="button" id="saveComment3" class="button success">Save/Update Comment</button> <button type="button" id="hideComment3" class="button primary">Hide Comment</button></div>
+</div>
+</div>
+<div id="call4" class="cell-6">
+<div id="call4s" class="bg-light m-3 p-3">
+<h4 id="attendeeName4">Call 4 -</h4>
+<br>
+<span id="attendeeId4" style="display:none"></span> <strong>Call Status:</strong> <span id="status4"></span><br>
+<strong>Attendee Phone Number:</strong> <span id="attendeePhone4"></span><br>
+<strong>Location:</strong> <span id="attendeeLoc4"></span><br>
+<strong>Attended Before:</strong> <span id="attendeeFirstTime4"></span><br>
+<strong>Post Location:</strong> <span id="attendeePost4"></span><br>
+<strong>Invited By:</strong> <span id="attendeeInvited4"></span><br>
+<br>
+<strong>Contact 1:</strong> <span id="attendee1Contact4"></span><br>
+<strong>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee1ContactPhone4"></span><br>
+<br>
+<strong>Contact 2:</strong> <span id="attendee2Contact4"></span><br>
+<strong>  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-outbound-fill" viewbox="0 0 16 16">
+<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z"></path></svg></strong>  <span id="attendee2ContactPhone4"></span><br>
+<br>
+<button type="button" id="completeBtn4" class="button success">Call Completed</button> <button type="button" id="attemptBtn4" class="button success">Call Attempted</button> <button type="button" id="commentBtn4" class="button yellow">Add Comment</button><br>
+<br>
+<button id="failBtn4" class="button warning" onclick="failCheck('4')" style="display:none">Could Not Complete</button><br>
+<div id="comments4" style="display:none"><br>
+<div class="form-group">
+<textarea data-role="textarea" data-prepend="Comments" id="comment4"></textarea></div>
+<br>
+<button type="button" id="saveComment4" class="button success">Save/Update Comment</button> <button type="button" id="hideComment4" class="button primary">Hide Comment</button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
